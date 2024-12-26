@@ -259,6 +259,7 @@ class Ui_MainWindow(object):
         Form.show()
         MainWindow.hide()
 
+
     def remove_it(self):
         screen = self.outputLabel.text()
         screen = screen[:-1]
