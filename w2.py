@@ -45,7 +45,7 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "Калькулятор комуналки"))
         self.comboBox.setItemText(0, _translate("Form", "Газ"))
         self.comboBox.setItemText(1, _translate("Form", "Світло"))
         self.comboBox.setItemText(2, _translate("Form", "Вода"))
@@ -56,13 +56,13 @@ class Ui_Form(object):
 
     def calculate_cost(self):
         try:
-            price = float(self.label_2.toPlainText())  # Отримуємо ціну
-            quantity = float(self.label.toPlainText())  # Отримуємо кількість
+            price = float(self.label_2.toPlainText())
+            quantity = float(self.label.toPlainText())
 
-            # Отримуємо вибір з комбобокса
+
             service = self.comboBox.currentText()
 
-            # Розрахунок вартості в залежності від вибору
+
             if service == "Газ":
                 total_cost = price * quantity
             elif service == "Світло":
@@ -72,7 +72,6 @@ class Ui_Form(object):
             else:
                 total_cost = 0
 
-            # Виводимо результат у label_3
             self.label_3.setText(f"Твоя ціна: {total_cost} грн")
         except ValueError:
             self.label_3.setText("Невірний формат ціни або кількості")
